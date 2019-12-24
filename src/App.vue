@@ -1,15 +1,20 @@
 <template>
-  <div id="app">
+  <div>
     <router-view/>
   </div>
 </template>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import storage from './storage/index'
+export default {
+  mounted() {
+    // storage.setItem("a", 1)
+    // storage.setItem("user", {a: 1})
+    // storage.setItem("abc", {a: 1}, 'user')
+    // storage.clear('a')
+    storage.clear('a', 'user')
+  }
 }
+</script>
+<style>
+
 </style>
