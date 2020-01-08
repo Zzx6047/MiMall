@@ -34,7 +34,7 @@ export default {
             margin-right: 8px;
         }
         .icon-setting {
-            @include bgImg(20px, 20px, '/imgs/icon-setting.png');
+            @include bgImg(20px, 20px, '/imgs/icon-setting.png'); 
         }
         .icon-7day {
             @include bgImg(20px, 20px, '/imgs/icon-7day.png');
