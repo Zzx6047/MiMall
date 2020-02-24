@@ -6,6 +6,8 @@ import VueCookie from 'vue-cookie'
 import VueLazyLOad from 'vue-lazyload'
 import VueAxios from 'vue-axios'
 import store from './store'
+import {Message} from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
 // import env from './env'
 
 const mock = false;
@@ -25,8 +27,9 @@ axios.interceptors.response.use(function(response) {
     if(path != '#/index') {
       window.location.href = '/#/login'
     }
+    return Promise.reject(res)
   }else {
-    alert(res.msg)
+    Message.warning(res.msg)
     return Promise.reject(res)
   }
 })
@@ -37,6 +40,8 @@ Vue.use(VueLazyLOad, {
   loading: '/imgs/loading-svg/loading-bars.svg'
 })
 Vue.config.productionTip = false
+
+Vue.prototype.$message = Message;
 
 new Vue({
   router,

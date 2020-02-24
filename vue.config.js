@@ -11,5 +11,9 @@ module.exports = {
                 }
             }
         }
+    },
+    productionSourceMap: true, //本地调试可为true，线上打包改为false
+    chainWebpack: (config) => {
+        config.plugins.delete('prefetch')
     }
 }
